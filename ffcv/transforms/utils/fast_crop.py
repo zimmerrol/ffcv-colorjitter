@@ -4,13 +4,14 @@ import numpy as np
 from ...libffcv import ctypes_resize
 
 @njit(inline='always')
-def resize_crop(source, start_row, end_row, start_col, end_col, destination):
+def resize_crop(source, start_row, end_row, start_col, end_col, destination, is_rgb=True):
     ctypes_resize(0,
                   source.ctypes.data,
                   source.shape[0], source.shape[1],
                   start_row, end_row, start_col, end_col,
                   destination.ctypes.data,
-                  destination.shape[0], destination.shape[1])
+                  destination.shape[0], destination.shape[1],
+                  is_rgb)
 
 
 @njit(parallel=False, fastmath=True, inline='always')
