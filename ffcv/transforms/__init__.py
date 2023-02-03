@@ -10,6 +10,7 @@ from .translate import RandomTranslate
 from .mixup import ImageMixup, LabelMixup, MixupToOneHot
 from .module import ModuleWrapper
 from .colorjitter import ColorJitter
+from .grayscale import RandomGrayscale
 
 __all__ = ['ToTensor', 'ToDevice',
            'ToTorchImage', 'NormalizeImage',
@@ -17,4 +18,4 @@ __all__ = ['ToTensor', 'ToDevice',
            'RandomResizedCrop', 'RandomHorizontalFlip', 'RandomTranslate',
            'Cutout', 'ImageMixup', 'LabelMixup', 'MixupToOneHot',
            'Poison', 'ReplaceLabel',
-           'ModuleWrapper', 'ColorJitter']
+           'ModuleWrapper', 'ColorJitter', 'RandomGrayscale']
